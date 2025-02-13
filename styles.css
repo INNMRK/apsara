@@ -1,0 +1,410 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+/* Include custom fonts */
+@font-face {
+    font-family: 'Lovely Valentine Script';
+    src: url('fonts/Lovely Valentine Script.otf') format('opentype'),
+         url('fonts/Lovely Valentine Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lovely Valentine Sans';
+    src: url('fonts/Lovely Valentine Sans.otf') format('opentype'),
+         url('fonts/Lovely Valentine Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Story Vintage';
+    src: url('fonts/Story Vintage.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Story Vintage', sans-serif;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Video Background */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* White Transparent Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-overlay h1 {
+    font-family: 'Lovely Valentine Script', cursive;
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Content Section */
+.content {
+    padding: 100px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+/* Question Section */
+.question-section {
+    width: auto;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: #ffebcd;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    border-top: 5px solid #ff6347;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.question-section p {
+    font-family: 'Lovely Valentine Sans', sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Button Styles */
+#yes-button,
+#no-button {
+    font-family: 'Lovely Valentine Sans', sans-serif;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #ff6347;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff6347;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#yes-button {
+    font-size: 1.6em;
+    padding: 15px 30px;
+    transform-origin: center;
+}
+
+#yes-button:hover {
+    background-color: #ff6347;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+#no-button {
+    transform-origin: center;
+}
+
+#no-button:hover {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+/* Loading Page */
+.loading-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Image */
+.loading-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Love Loader */
+.love-loader {
+    width: 7em;
+    height: 5em;
+    position: relative;
+    animation: beat 5s infinite;
+    margin: auto;
+    top: 35%;
+    transform: translateY(-50%);
+}
+
+.love-loader::before,
+.love-loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    border-radius: 5em 5em 0 0;
+    animation: coldblue 5s infinite;
+}
+
+.love-loader::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.love-loader::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes coldblue {
+    0%, 100% {
+        background-color: rgb(255, 255, 255);
+    }
+    50% {
+        background-color: rgb(204, 72, 78);
+    }
+}
+
+/* Text Loader */
+.text-loader {
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.loader-text {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: #151516;
+    animation: text_713 5s ease both infinite;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+.load {
+    background-color: #c94a63;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: loading_713 5s ease both infinite;
+}
+
+.load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #D1C2FF;
+    border-radius: inherit;
+    animation: loading2_713 5s ease both infinite;
+}
+
+@keyframes text_713 {
+    0% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
+    }
+    40% {
+        letter-spacing: 2px;
+        transform: translateX(26px);
+    }
+    80% {
+        letter-spacing: 1px;
+        transform: translateX(32px);
+    }
+    90% {
+        letter-spacing: 2px;
+        transform: translateX(0px);
+    }
+    100% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes loading_713 {
+    0% {
+        width: 16px;
+        transform: translateX(0px);
+    }
+    40% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+    80% {
+        width: 16px;
+        transform: translateX(64px);
+    }
+    90% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+    100% {
+        width: 16px;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes loading2_713 {
+    0% {
+        transform: translateX(0px);
+        width: 16px;
+    }
+    40% {
+        transform: translateX(0%);
+        width: 80%;
+    }
+    80% {
+        width: 16px;
+        transform: translateX(50%);
+    }
+    100% {
+        width: 16px;
+        transform: translateX(0px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .text-overlay h1 {
+        font-size: 2em;
+    }
+
+    .question-section {
+        padding: 30px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #yes-button,
+    #no-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
